@@ -19,23 +19,6 @@
  * Domain Path:       /languages
  */
 
-
-/**
- * Shifter VersionPress Settings
- */
-function shifter_versionpress_helper() {
-
-  /**
-   * VersionPress Project Root
-   * @link  https://docs.versionpress.net/en/getting-started/configuration/#vp_project_root
-   * @since 4.0-beta2
-   */
-  if (class_exists('\VersionPress')) {
-    $upload_dir = wp_get_upload_dir();
-    $save_path = $upload_dir['basedir'] . '/versionpress';
-    define('VP_PROJECT_ROOT', $save_path);
-  }
-  
-}
-
-add_action('init', 'shifter_versionpress_helper');
+$upload_dir = wp_get_upload_dir();
+$save_path = $upload_dir['basedir'] . '/versionpress';
+define('VP_PROJECT_ROOT', $save_path);
